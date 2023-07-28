@@ -5,15 +5,23 @@ import ColorList from "colorList/ColorList";
 import { useColors } from "colorPicker/useColors";
 
 const App = () => {
-	const { color, colorList, handleChangeColor, handleSubmitSaveColor } =
-		useColors();
+	const {
+		color,
+		colorList,
+		handleChangeColor,
+		handleSubmitSaveColor,
+		handleClickClearColors,
+	} = useColors();
 	return (
 		<>
 			<h1 className="text-center bg-dark text-white p-2">Color Picker</h1>
 			<div className="container mt-4">
 				<div className="row">
 					<div className="col-12 col-md-4">
-						<ColorList colorList={colorList} />
+						<ColorList
+							colorList={colorList}
+							handleClickClearColors={handleClickClearColors}
+						/>
 					</div>
 					<div className="col-12 col-md-8">
 						<ColorPicker
